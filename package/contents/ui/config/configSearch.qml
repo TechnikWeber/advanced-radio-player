@@ -641,9 +641,16 @@ KCM.ScrollViewKCM {
     }
 
     // }
+    // Follow the system default output (e.g. Bluetooth headphones connected later)
+    MediaDevices {
+        id: testPlayDevices
+    }
+
     MediaPlayer {
         id: testPlay
-        audioOutput: AudioOutput {}
+        audioOutput: AudioOutput {
+            device: testPlayDevices.defaultAudioOutput
+        }
         onErrorOccurred: {
             message.positive = false
             message.text = i18n("Error") + ": " + testPlay.errorString

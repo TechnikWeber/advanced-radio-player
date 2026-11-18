@@ -128,6 +128,11 @@ PlasmoidItem {
         target: executable
     }
 
+    // Follow the system default output (e.g. Bluetooth headphones connected later)
+    MediaDevices {
+        id: mediaDevices
+    }
+
     MediaPlayer {
         id: playMusic
 
@@ -146,6 +151,7 @@ PlasmoidItem {
         audioOutput: AudioOutput {
             id: playMusicOutput
 
+            device: mediaDevices.defaultAudioOutput
             volume: 0.75
         }
 
