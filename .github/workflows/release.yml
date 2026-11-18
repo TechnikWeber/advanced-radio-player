@@ -15,7 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Tag matches the widget version
-        run: grep -q "\"Version\": \"${GITHUB_REF_NAME#v}\"" package/metadata.json
+        run: |
+          grep -q "\"Version\": \"${GITHUB_REF_NAME#v}\"" package/metadata.json
       - run: make dist
       - name: Checksums
         working-directory: dist
