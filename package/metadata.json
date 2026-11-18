@@ -1,0 +1,32 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "dr@i-glu4it.ru",
+                "Name": "Yuri Saurov"
+            }
+        ],
+        "BugReportUrl": "",
+        "Category": "Multimedia",
+        "Description": "Radio with editable list of stations",
+        "Description[ru]": "Радио с редактируемым списком станций",
+        "Description[uk]": "Радіо з редагованим списком станцій",
+        "EnabledByDefault": true,
+        "FormFactors": [
+            "tablet",
+            "handset",
+            "desktop"
+        ],
+        "Icon": "radio",
+        "Id": "org.kde.plasma.advancedradio",
+        "License": "GPL-2.0+",
+        "Name": "Advanced Radio Player",
+        "Website": "",
+        "Version": "3.1"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.multimedia"
+    ]
+}
