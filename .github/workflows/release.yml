@@ -1,0 +1,30 @@
+# On a version tag: run the checks, build the .plasmoid and publish it with SHA256SUMS
+# as a release. The tag must match the version in package/metadata.json.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Tag matches the widget version
+        run: grep -q "\"Version\": \"${GITHUB_REF_NAME#v}\"" package/metadata.json
+      - run: make dist
+      - name: Checksums
+        working-directory: dist
+        run: sha256sum * > SHA256SUMS && cat SHA256SUMS
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/* --title "$GITHUB_REF_NAME" \
+            --notes "Download \`com.technikweber.advancedradio.plasmoid\`, then right-click the desktop › Enter Edit Mode › Add or Manage Widgets… › Get New Widgets… › Install Widget From Local File…
+
+          See the [README](https://github.com/TechnikWeber/advanced-radio-player#readme) for what changed compared to the original widget."

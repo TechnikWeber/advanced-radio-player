@@ -5,11 +5,14 @@
             {
                 "Email": "dr@i-glu4it.ru",
                 "Name": "Yuri Saurov"
+            },
+            {
+                "Name": "Philipp Weber (fork)"
             }
         ],
-        "BugReportUrl": "",
+        "BugReportUrl": "https://github.com/TechnikWeber/advanced-radio-player/issues",
         "Category": "Multimedia",
-        "Description": "Radio with editable list of stations",
+        "Description": "Radio with editable list of stations (fork that follows the default audio output)",
         "Description[ru]": "Радио с редактируемым списком станций",
         "Description[uk]": "Радіо з редагованим списком станцій",
         "EnabledByDefault": true,
@@ -19,11 +22,11 @@
             "desktop"
         ],
         "Icon": "radio",
-        "Id": "org.kde.plasma.advancedradio",
+        "Id": "com.technikweber.advancedradio",
         "License": "GPL-2.0+",
-        "Name": "Advanced Radio Player",
-        "Website": "",
-        "Version": "3.1"
+        "Name": "Advanced Radio Player (TW)",
+        "Website": "https://github.com/TechnikWeber/advanced-radio-player",
+        "Version": "3.1-tw1"
     },
     "X-Plasma-API-Minimum-Version": "6.0",
     "X-Plasma-Provides": [
